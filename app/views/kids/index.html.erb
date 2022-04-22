@@ -1,0 +1,21 @@
+<h1>Kids index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kids.each do |kids| %>
+    <tr>
+      <td><%= kids.name%></td>
+      <td><%= kids.age%></td>
+      <td><%= kids.description%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

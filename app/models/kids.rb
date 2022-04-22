@@ -1,4 +1,4 @@
-class Kid < ApplicationRecord
+class Kids < ApplicationRecord
   validates :name, presence:true, length: {minimum: 2, maximum: 100}
   validates :description, presence:true, length: {minimum: 15, maximum: 300}
   validates :age, presence:true, length: {minimum: 1, maximum: 3}
