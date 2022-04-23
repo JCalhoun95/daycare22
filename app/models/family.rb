@@ -1,4 +1,4 @@
 class Family < ApplicationRecord
-  has_many :kids
-  has_many :parents
+  # has_many :kids
+  # has_many :parents
 end

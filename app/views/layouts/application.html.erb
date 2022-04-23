@@ -20,24 +20,15 @@
         crossorigin="anonymous"
       ></script>
 
-      <%= render 'layouts/navigation' %>
-      <%
-=begin%>
- <%= render 'layouts/messages' %> 
-<%
-=end%>
-    </head>
-
-
-
-
-
   </head>
 
   <body>
-    <% flash.each do |name, messages| %>
-      <%= messages %>
-    <% end %>
-    <%= yield %>
+    <%= render 'layouts/navigation' %>
+    <div class="container">
+      <% flash.each do |name, messages| %>
+        <%= messages %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

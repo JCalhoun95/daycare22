@@ -20,8 +20,10 @@
       <td><%= link_to 'Edit', edit_kid_path(kids) %> </td>
       <td><%= link_to 'Delete', kid_path(kids), method: :delete %> </td>
  
-      <td><%= link_to 'Create Kid', new_kid_path %> </td>
+
     </tr>
     <% end %>
-  </tbody>
+  </tbody>     
 </table>
+
+ <%= link_to 'Create Kid', new_kid_path %> 

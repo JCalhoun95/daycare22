@@ -4,42 +4,42 @@ class KidsController < ApplicationController
   end
 
   def show
-    @kids = Kid.find(params[:id])
+    @kid = Kid.find(params[:id])
   end
 
   def new
-    @kids = Kid.new
+    @kid = Kid.new
   end
 
   def create
-    @kids = Kid.new(params.require(:kids).permit(:name, :age, :description))
-      if @kids.save
+    @kid = Kid.new(params.require(:kid).permit(:name, :age, :description))
+      if @kid.save
         flash[:notice] = "Kid was created successfully"
-        redirect_to @kids
+        redirect_to @kid
       else 
         render 'new'
       end
   end
 
   def edit
-    @kids = Kid.find(params[:id])
+    @kid = Kid.find(params[:id])
   end 
 
   def update
-     @kids =Kid.find(params[:id])
+     @kid =Kid.find(params[:id])
 
-    if @kids.update(params.require(:book).permit(:name, :age, :description))
+    if @kid.update(params.require(:kid).permit(:name, :age, :description))
       flash[:message] = "Update successfull"
-      redirect_to @kids
+      redirect_to @kid
     else
       render 'edit'
     end
   end
 
   def destroy
-    @kids = Kid.find(params[:id])
-      flash[:message] = "#{@kids.name} was successfully deleted"
-    @kids.destroy
+    @kid = Kid.find(params[:id])
+      flash[:message] = "#{@kid.name} was successfully deleted"
+    @kid.destroy
       redirect_to kids_path
   end
 end
