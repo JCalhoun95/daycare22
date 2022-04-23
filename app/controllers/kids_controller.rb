@@ -18,6 +18,7 @@ class KidsController < ApplicationController
         redirect_to @kids
       else 
         render 'new'
+      end
   end
 
   def edit
@@ -32,6 +33,7 @@ class KidsController < ApplicationController
       redirect_to @kids
     else
       render 'edit'
+    end
   end
 
   def distroy

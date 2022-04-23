@@ -16,11 +16,11 @@
       <td><%= kids.name%></td>
       <td><%= kids.age%></td>
       <td><%= kids.description%></td>   
-      <td><%= link_to 'Show', kids_path(kid) %> </td>
-      <td><%= link_to 'Edit', edit_kids_path(kid) %> </td>
-      <td><%= link_to 'Delete', kids_path(kid), method: :delete %> </td>
+      <td><%= link_to 'Show', kids_path(kids) %> </td>
+      <td><%= link_to 'Edit', kids_path(kids) %> </td>
+      <td><%= link_to 'Delete', kids_path(kids), method: :delete %> </td>
  
-      <td><%= link_to 'Create Kid', new_kids_path(kid) %> </td>
+      <td><%= link_to 'Create Kid', new_path(kids) %> </td>
     </tr>
     <% end %>
   </tbody>
