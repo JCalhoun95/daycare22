@@ -8,8 +8,10 @@
 <%= form.label :description, "Description" %>
 <%= form.text_field :description %>
 <%= form.submit "Save" %>
-
-  <% if @kids.errors.any? %> <% @kids.errors.full_messages.each do |message| %>
+<% end %>
+  <% if @kids.errors.any? %> 
+  <% @kids.errors.full_messages.each do |message| %>
   <p><%= message %></p>
 
-<% end %> <% end %> 
+  <% end %> 
+  <% end %> 

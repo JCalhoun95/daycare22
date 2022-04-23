@@ -1,6 +1,6 @@
 class KidsController < ApplicationController
   def index
-    @kids = Kids.all 
+    @kids = Kid.all 
   end
 
   def show
@@ -12,7 +12,7 @@ class KidsController < ApplicationController
   end
 
   def create
-    @kids = Kids.new(params.require(:kids).permit(:name, :age, :description))
+    @kids = Kid.new(params.require(:kids).permit(:name, :age, :description))
       if @kids.save
         flash[:notice] = "Kid was created successfully"
         redirect_to @kids
@@ -22,11 +22,11 @@ class KidsController < ApplicationController
   end
 
   def edit
-    @kids = Kids.find(params[:id])
+    @kids = Kid.find(params[:id])
   end 
 
   def update
-     @kids =Kids.find(params[:id])
+     @kids =Kid.find(params[:id])
 
     if @kids.update(params.require(:book).permit(:name, :age, :description))
       flash[:message] = "Update successfull"
@@ -36,10 +36,10 @@ class KidsController < ApplicationController
     end
   end
 
-  def distroy
-    @kids = Kids.find(params[:id])
+  def destroy
+    @kids = Kid.find(params[:id])
       flash[:message] = "#{@kids.name} was successfully deleted"
-    @kids.distroy
+    @kids.destroy
       redirect_to kids_path
   end
 end
