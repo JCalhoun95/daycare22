@@ -1,17 +1,22 @@
 class UsersController < ApplicationController
-  def new
-    @users = Users.new
+
+  def show
+    @user = User.show
   end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
 
+  def new
+    @User = Users.new
+  end
+
   def create
-    @users = Users.new(user_params)
-    if @users.save
+    @users = Users.new(params.require(:user).permit(:username, :email, :password))
+    if @user.save
       flash[:notice] = "Welcome #{@users.username} to The Daycare , you have sucessfuly signed up."
-      redirect_to kids_path
+      redirect_to user_path
     else render 'new'
   end
 
