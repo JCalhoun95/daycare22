@@ -1,9 +1,5 @@
 <div style="margin: 0 25%; width: 50%">
-  <%
-=begin%>
- <%= render "errors" %>  
-<%
-=end%>
+
   <%= form_with(model: @user) do |form| %>
   <div class="mb-3">
     <%= form.label :username, "Username:", class:"form-label" %>

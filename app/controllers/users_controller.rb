@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.show
+    @user = User.show(params[:id])
   end
 
   def user_params
@@ -9,14 +9,14 @@ class UsersController < ApplicationController
   end
 
   def new
-    @User = Users.new
+    @user = User.new
   end
 
   def create
-    @users = Users.new(params.require(:user).permit(:username, :email, :password))
+    @user = User.new(params.require(:user).permit(:username, :email, :password))
     if @user.save
-      flash[:notice] = "Welcome #{@users.username} to The Daycare , you have sucessfuly signed up."
-      redirect_to user_path
+      flash[:notice] = "Welcome #{@user.username} to The Daycare , you have sucessfuly signed up."
+      redirect_to @user
     else render 'new'
   end
 
